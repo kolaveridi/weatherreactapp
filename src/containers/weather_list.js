@@ -7,10 +7,22 @@ class WeatherList extends Component{
      this.renderWeather=this.renderWeather.bind(this);
    }
    renderWeather(cityData){
-     const name=cityData.city.name;
-     const temps=cityData.list.map(weather=>weather.main.temp);
-     const pressures=cityData.list.map(weather=>weather.main.pressure);
-     const humidities=cityData.list.map(weather=>weather.main.humidity);
+   if(cityData===undefined){
+    name="Not in USA";
+   temps=[];
+   pressures=[];
+   humidities=[];
+   }
+   else{
+     var name=cityData.city.name;
+      var  temps=cityData.list.map(weather=>weather.main.temp);
+     var  pressures=cityData.list.map(weather=>weather.main.pressure);
+     var humidities=cityData.list.map(weather=>weather.main.humidity);
+
+   }
+
+
+
 
      console.log(temps);
      return(
